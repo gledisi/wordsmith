@@ -12,7 +12,7 @@ import java.util.NoSuchElementException;
 public class Main {
     public static void main(String[] args) throws Exception {
         Class.forName("org.postgresql.Driver");
-
+        System.out.println("Starting api server");
         HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
         server.createContext("/noun", handler(() -> randomWord("nouns")));
         server.createContext("/verb", handler(() -> randomWord("verbs")));
