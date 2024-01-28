@@ -52,7 +52,7 @@ jobs:
       ### defaults to:
       image-names: |
         ghcr.io/dockersamples/wordsmith-api
-        dockersamples/wordsmith-api
+        ggjinaj/wordsmith-api
         dockersamples/k8s-wordsmith-api
       
       ### REQUIRED set rules for tagging images, based on special action syntax:
