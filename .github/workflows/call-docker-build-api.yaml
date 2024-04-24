@@ -1,4 +1,5 @@
 name: Build API
+run-name: ${{ github.actor }} is learning GitHub Actions
 # template source: https://github.com/dockersamples/.github/blob/main/templates/call-docker-build.yaml
 
 on:
