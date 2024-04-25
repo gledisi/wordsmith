@@ -20,6 +20,16 @@ on:
       - '.github/workflows/call-docker-build-api.yaml'
 
 jobs:
+
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+      - id: foo
+        uses: ./.github/actions/hello-world-action
+        with:
+          who-to-greet: 'Mona the Octocat'
+
   call-docker-build:
 
     name: API Call Docker Build
