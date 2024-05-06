@@ -9,7 +9,11 @@
 name: Java CI with Maven
 
 on:
-  push:
+  workflow_run:
+    types:
+      - completed
+    workflows:
+      - learn-github-actions
     branches: main
   pull_request:
     branches: [ $default-branch ]
