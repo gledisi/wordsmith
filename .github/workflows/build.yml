@@ -9,20 +9,14 @@
 name: Java CI with Maven
 
 on:
-  workflow_run:
-    types:
-      - completed
-    workflows:
-      - learn-github-actions
-    branches: main
+  push:
+    branches: [main]
   pull_request:
     branches: [ $default-branch ]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 17
@@ -33,3 +27,10 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file ./api/pom.xml
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: unit-testing
+        run: mvn clean test
